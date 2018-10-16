@@ -1,0 +1,52 @@
+;
+    }
+    $@ = undef;
+}
+$label = 'Modules needed for rest of perlivp exist';
+if ($needed_total == $needed_there) {
+    print "ok 4 $label\n";
+    $pass__total++;
+}
+else {
+    print "not ok 4 $label\n";
+    $error_total++;
+}
+$tests_total++;
+
+
+print "## Checking installations of extensions built with perl.\n" if $opt{'p'};
+
+use Config;
+
+my $extensions_total = 0;
+my $extensions_there = 0;
+if (defined($Config{'extensions'})) {
+    my @extensions = split(/\s+/,$Config{'extensions'});
+    foreach (@extensions) {
+        next if ($_ eq '');
+        if ( $useithreads !~ /define/i ) {
+            next if ($_ eq 'threads');
+            next if ($_ eq 'threads/shared');
+        }
+        # that's a distribution name, not a module name
+        next if $_ eq 'IO/Compress';
+        next if $_ eq 'Devel/DProf';
+        next if $_ eq 'libnet';
+        next if $_ eq 'Locale/Codes';
+        next if $_ eq 'podlators';
+        next if $_ eq 'perlfaq';
+        # test modules
+        next if $_ eq 'XS/APItest';
+        next if $_ eq 'XS/Typemap';
+           # VMS$ perl  -e "eval ""require \""Devel/DProf.pm\"";"" print $@"
+           # \NT> perl  -e "eval \"require 'Devel/DProf.pm'\"; print $@"
+           # DProf: run perl with -d to use DProf.
+           # Compilation failed in require at (eval 1) line 1.
+        eval " require \"$_.pm\"; ";
+        if (!$@) {
+            print "## Module '$_' appears to be installed.\n" if $opt{'v'};
+            $extensions_there++;
+        }
+        else {
+            print "# Required module '$_' does not appear to be properly installed.\n";
+       
