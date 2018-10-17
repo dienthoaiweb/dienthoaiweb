@@ -182,7 +182,7 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 										<li><a href="">Hình thức thanh toán</a></li> 
                                     </ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Quản lý danh mục abc<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#">Quản lý danh mục <i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
 										<li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
