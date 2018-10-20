@@ -50,14 +50,12 @@ if(!isset($_SESSION["giohang"])){
 include_once("dbconnect.php");
 	function dathang($ma,$conn)
 	{
-		if(isset($_GET["ma"])){
-			if(is_numeric($_POST['txtDatHang']))
-			{
-				$querysoluongconlai = mysqli_query($conn, "SELECT sp_soluong FROM sanpham  WHERE sp_ma = ".$ma);
-				$soluongconlai = mysqli_fetch_row($querysoluongconlai);
-				if($soluongconlai[0]>=$_POST['txtDatHang'])
-				{
-				$coroi = false;
+		$ma = $_GET["ma"];
+		$resultsql = mysqli_query ($conn, "SELECT a.*, b.nsx_ten FROM sanpham a, nhasanxuat b WHERE a.nsx_ma=b.nsx_ma and sp_ma = ".$ma);
+		$rowsql = mysqli_fetch_row($resultsql);
+		if($rowsql[7]>=1)
+		{
+			$coroi = false;
 				foreach ($_SESSION["giohang"] as $key => $row)
 				{
 					if($key==$ma)
@@ -68,29 +66,31 @@ include_once("dbconnect.php");
 				}
 				if(!$coroi)
 				{
+					$ten = $rowsql[1];
+					$gia = $rowsql[2];
+					$nsx = $rowsql[11];
 					$dathang = array(
 					"ten" => $ten,
 					"gia" => $gia,
-					"soluong" => $_POST['txtDatHang'],
+					"soluong" => 1,
 					"hang" => $nsx);
 					$_SESSION['giohang'][$ma]=$dathang;
 				}
 				echo "<script language='javascript'>
 					alert('San pham da duoc them vao gia hang, truy cap gio hang de xem');
-					window.location=window.location;
+					window.loaction=window.location
 					</script>";
 			}
 			else
 			{
 				echo "<script>alert('So luong ban dat vuot qua so luong trong kho');</script>";
 			}
-			}
-			else
-			{
-				echo "<script>alert('So luong khong hop le');</script>";
-			}
 		}
-	}
+if(isset($_GET['func'])&isset($_GET['ma']))
+{
+	$ma = $_GET["ma"];
+	dathang($ma,$conn);
+}
 ?>
 
    <header id="header"><!--header-->
@@ -100,8 +100,8 @@ include_once("dbconnect.php");
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +84 7679 24 08 92</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> admin@tommystore.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +84 7103 777 777</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> admin@salomon.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -125,8 +125,7 @@ include_once("dbconnect.php");
 				<div  >
 					<div class="col-sm-6" >
 						<div class="logo pull-left" >
-							<p><a href="index.php" style="background-color:#069;color:#FFF">TÔ MÌ STORE </a></p>
-							<p><a href="index.php" style="background-color:#069;color:#FFF"><img src="images/LOGOSTORE.png" width="140" height="47"></a></p>
+							<a href="index.php" style="background-color:#069;color:#FFF">SALOMON <img src="images/logo.png"></a>
 						</div>
 						
 					</div>
@@ -134,21 +133,21 @@ include_once("dbconnect.php");
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav" >
 								<li ><a href="#" style="background-color:#069;color:#FFF"><i class="fa fa-user"></i> Tài khoản</a></li>
-                                <li><a href="?khoatrang=giohang" style="background-color:#069;color:#FFF"><i class="fa fa-shopping-cart"></i> Giỏ hàng<span class="badge"><?php if((isset($_SESSION['giohang']))&& count($_SESSION['giohang'])>0) echo count($_SESSION['giohang']); else '';?></span></a></li>
+                                <li><a href="" style="background-color:#069;color:#FFF"><i class="fa fa-shopping-cart"></i> Giỏ hàng<span class="badge"><?php if((isset($_SESSION['giohang']))&& count($_SESSION['giohang'])>0) echo count($_SESSION['giohang']); else '';?></span></a></li>
                                 
                                 <?php
 		  							if (isset($_SESSION['tendangnhap']) && $_SESSION['tendangnhap'] != "") {
 		  						?>
-          							<li><a style="background-color:#069;color:#FFF" href="?khoatrang=capnhatkhachhang"><i class="fa fa-lock"></i>Chào <?php echo $_SESSION['tendangnhap']?></a>
+          							<li><a style="background-color:#069;color:#FFF" href=""><i class="fa fa-lock"></i>Chào <?php echo $_SESSION['tendangnhap']?></a>
                                     </li>
-          							<li><a href="?khoatrang=dangxuat" style="background-color:#069;color:#FFF"><i class="fa fa-crosshairs"></i>Đăng xuất</a></li>
+          							<li><a href="" style="background-color:#069;color:#FFF"><i class="fa fa-crosshairs"></i>Đăng xuất</a></li>
 								<?php
 									  }
 									  else
 									  {
 								 ?>
-                                      <li ><a href="?khoatrang=dangnhap" style="background-color:#069;color:#FFF"><i class="fa fa-lock"></i>Đăng nhập</a></li>
-                                      <li><a href="?khoatrang=dangky" style="background-color:#069;color:#FFF"><i class="fa fa-star"></i>Đăng ký</a></li>
+                                      <li ><a href="" style="background-color:#069;color:#FFF"><i class="fa fa-lock"></i>Đăng nhập</a></li>
+                                      <li><a href="" style="background-color:#069;color:#FFF"><i class="fa fa-star"></i>Đăng ký</a></li>
 							  <?php
                               }
                               ?>
@@ -176,25 +175,26 @@ include_once("dbconnect.php");
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php" class="active">Trang chủ</a></li>
-								<li class="dropdown"><a href="#">Giới thiệu<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="gioithieu.php">Giới thiệu<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="lichsuhinhthanh.php">Lịch sử hình thành</a></li>
-										<li><a href="hethongchinhanh.php">Hệ thống chi nhánh</a></li> 
-										<li><a href="hinhthucthanhtoan.php">Hình thức thanh toán</a></li> 
+                                        <li><a href="">Lịch sử hình thành</a></li>
+										<li><a href="">Hệ thống chi nhánh</a></li> 
+										<li><a href="">Hình thức thanh toán</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Quản lý danh mục<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
-										<li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
+                                        <li><a href="">Loại sản phẩm</a></li>
+										<li><a href="">Sản phẩm</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="?khoatrang=giohang">Giỏ hàng</a></li>
-                                <li><a href="?khoatrang=gopy">Góp ý</a></li>
-								<li><a href="lienhe.php">Liên hệ</a></li>
+								<li><a href="">Giỏ hàng</a></li>
+                                <li><a href="">Góp ý</a></li>
+								<li><a href="">Liên hệ</a></li>
 							</ul>
 						</div>
 					</div>
+					a
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
 							<input type="text" placeholder="Tìm kiếm"/>
@@ -203,71 +203,59 @@ include_once("dbconnect.php");
 				</div>
 			</div>
 		</div><!--/header-bottom-->
-	</header><!--/header-->
-  
-    <?php
-	if(isset($_GET['khoatrang']))
-	{
-		$khoatrang = $_GET['khoatrang'];
-		if($khoatrang=="quanlyloaisanpham"){
-			include_once("quanly_loaisanpham.php");
-		}
-		elseif($khoatrang=="quanlyloaisanpham_capnhat"){
-			include_once("quanly_loaisanpham_capnhat.php");
-		}
-		elseif($khoatrang=="quanlysanpham"){
-			include_once("quanly_sanpham.php");
-		}
-		elseif($khoatrang=="quanlysanpham_capnhat"){
-			include_once("quanly_sanpham_capnhat.php");
-		}
-		elseif($khoatrang=="quanlysanpham_hinhanh"){
-			include_once("quanly_sanpham_hinhanh.php");
-		}
-		elseif($khoatrang=="quanly_chitietsanpham"){
-			include_once("quanly_chitietsanpham.php");
-		}
-		elseif($khoatrang=="giohang"){
-			include_once("giohang.php");
-		}
-		elseif($khoatrang=="dangky"){
-			include_once("dangky.php");
-		}
-		elseif($khoatrang=="dangnhap"){
-			include_once("dangnhap.php");
-		}
-		elseif($khoatrang=="thanhtoan"){
-			include_once("thanhtoan.php");
-		}
-		elseif($khoatrang=="capnhatkhachhang"){
-			include_once("capnhatkhachhang.php");
-		}
-		elseif($khoatrang=="gopy"){
-			include_once("phanhoi.php");
-		}
-		elseif($khoatrang=="dangxuat"){
-			include_once("dangxuat.php");
-		}
-		
-		elseif($khoatrang=="danhsachsanpham"){
-		include_once("danhsachsanpham.php");
-		}
-		elseif($khoatrang=="kichhoat"){
-		include_once("kichhoat.php");
-		}
-		elseif($khoatrang=="timkiem"){
-		include_once("timkiem.php");
-		}
-		
-	}
-	else{
-		include("noidungtrangchu.php");
-	}
-	?>
-      
-    
-    <div class="footer-top-area">
-        <div class="zigzag-bottom"></div>
+	</header>
+   <!--/header-->
+   <table width="100%" border="0" cellspacing="0" cellpadding="5">
+     <tr>
+       <td width="5%">&nbsp;</td>
+       <td width="62%" rowspan="3"><div>
+         <div>Hà Nội</div>
+         <div>
+           <div>
+             <address>
+               120 Thái Hà, Q. Đống Đa | <a href="https://mobilecity.vn/lien-he/?cs=1">Xem bản đồ</a>
+             </address>
+             <p>Điện thoại: <a href="tel:0971206688">097.120.6688</a> - <a href="tel:0969120120 <p>Trung h%E1%BB%97 tr%E1%BB%A3: 0964120120">0969.120.120</a></p>
+             <p><a href="tel:0969120120 <p>Trung h%E1%BB%97 tr%E1%BB%A3: 0964120120">Trung hỗ trợ: 0964.120.120</a></p>
+           </div>
+           <div>
+             <address>
+               398 Cầu Giấy, Q. Cầu Giấy | <a href="https://mobilecity.vn/lien-he/?cs=2">Xem bản đồ</a>
+             </address>
+             <p>Điện thoại: <a href="tel:0961111398">096.1111.398</a> - <a href="tel:0962222398">096.2222.398</a></p>
+           </div>
+         </div>
+       </div>
+         <div>
+           <div>TP.Hồ Chí Minh</div>
+           <div>
+             <div>
+               <address>
+                 123 Trần Quang Khải, Q.1 | <a href="https://mobilecity.vn/lien-he/?cs=3">Xem bản đồ</a>
+               </address>
+               <p>Điện thoại: <a href="tel:0965123123">0965.123.123</a> - <a href="tel:0969520520">0969.520.520</a></p>
+             </div>
+             <div>
+               <address>
+                 602 Lê Hồng Phong, P.10, Q.10 | <a href="https://mobilecity.vn/lien-he/?cs=4">Xem bản đồ</a>
+               </address>
+               <p>Điện thoại: <a href="tel:0971111602">097.1111.602</a> - <a href="tel:0973333602">097.3333.602</a></p>
+             </div>
+           </div>
+       </div></td>
+       <td width="33%">&nbsp;</td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+   </table>
+   <div class="footer-top-area">
+     <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -307,7 +295,7 @@ include_once("dbconnect.php");
 						?>
                         <ul>
                             <li>
-                            	<a href="?khoatrang=danhsachsanpham&maloai=<?php echo $row['lsp_ma'];?>">
+                            	<a href="">
                             	<?php echo $row['lsp_ten'];?>
                                 </a>    
                             </li>
