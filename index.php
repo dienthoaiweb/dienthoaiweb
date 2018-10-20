@@ -50,12 +50,14 @@ if(!isset($_SESSION["giohang"])){
 include_once("dbconnect.php");
 	function dathang($ma,$conn)
 	{
-		$ma = $_GET["ma"];
-		$resultsql = mysqli_query ($conn, "SELECT a.*, b.nsx_ten FROM sanpham a, nhasanxuat b WHERE a.nsx_ma=b.nsx_ma and sp_ma = ".$ma);
-		$rowsql = mysqli_fetch_row($resultsql);
-		if($rowsql[7]>=1)
-		{
-			$coroi = false;
+		if(isset($_GET["ma"])){
+			if(is_numeric($_POST['txtDatHang']))
+			{
+				$querysoluongconlai = mysqli_query($conn, "SELECT sp_soluong FROM sanpham  WHERE sp_ma = ".$ma);
+				$soluongconlai = mysqli_fetch_row($querysoluongconlai);
+				if($soluongconlai[0]>=$_POST['txtDatHang'])
+				{
+				$coroi = false;
 				foreach ($_SESSION["giohang"] as $key => $row)
 				{
 					if($key==$ma)
@@ -66,31 +68,29 @@ include_once("dbconnect.php");
 				}
 				if(!$coroi)
 				{
-					$ten = $rowsql[1];
-					$gia = $rowsql[2];
-					$nsx = $rowsql[11];
 					$dathang = array(
 					"ten" => $ten,
 					"gia" => $gia,
-					"soluong" => 1,
+					"soluong" => $_POST['txtDatHang'],
 					"hang" => $nsx);
 					$_SESSION['giohang'][$ma]=$dathang;
 				}
 				echo "<script language='javascript'>
 					alert('San pham da duoc them vao gia hang, truy cap gio hang de xem');
-					window.loaction=window.location
+					window.location=window.location;
 					</script>";
 			}
 			else
 			{
 				echo "<script>alert('So luong ban dat vuot qua so luong trong kho');</script>";
 			}
+			}
+			else
+			{
+				echo "<script>alert('So luong khong hop le');</script>";
+			}
 		}
-if(isset($_GET['func'])&isset($_GET['ma']))
-{
-	$ma = $_GET["ma"];
-	dathang($ma,$conn);
-}
+	}
 ?>
 
    <header id="header"><!--header-->
@@ -100,8 +100,8 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +84 7103 777 777</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> admin@salomon.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +84 7679 24 08 92</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> admin@tommystore.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -125,7 +125,8 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 				<div  >
 					<div class="col-sm-6" >
 						<div class="logo pull-left" >
-							<a href="index.php" style="background-color:#069;color:#FFF">SALOMON <img src="images/logo.png"></a>
+							<p><a href="index.php" style="background-color:#069;color:#FFF">TÔ MÌ STORE </a></p>
+							<p><a href="index.php" style="background-color:#069;color:#FFF"><img src="images/LOGOSTORE.png" width="140" height="47"></a></p>
 						</div>
 						
 					</div>
