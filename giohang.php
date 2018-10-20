@@ -13,7 +13,7 @@ if(isset($_GET['action'])){
 	if($_GET['action'] == "xoa"){
 		$id=$_GET['ma'];
 		unset($_SESSION['giohang'][$id]);
-		echo "<script>window.location='?khoatrang=thanhtoan';</script>";
+		echo "<script>window.location='?khoatrang=giohang';</script>";
 	}
 }
 if(isset($_POST['btnDongY'])){
