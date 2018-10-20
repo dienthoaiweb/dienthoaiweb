@@ -236,7 +236,7 @@ include_once("dbconnect.php");
 				?>
 				<!--Một sản phẩm -->
                             <div class="single-product">
-                                <div class="product-f-image">
+                                <div class="product-f-image"style="width:195px; height:255px;">
                                     <img src="product-imgs/<?php echo  $row['sp_hinhdaidien']?>" title="product-imgs"  >
                                     <div class="product-hover">
                                         <a href="?func=dathang&ma=<?php echo  $row['sp_ma']?>" class="add-to-cart-link" ><i class="fa fa-shopping-cart"></i> Add to cart</a>
