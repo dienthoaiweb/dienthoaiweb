@@ -177,9 +177,9 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 								<li><a href="index.php" class="active">Trang chủ</a></li>
 								<li class="dropdown"><a href="gioithieu.php">Giới thiệu<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="">Lịch sử hình thành</a></li>
-										<li><a href="">Hệ thống chi nhánh</a></li> 
-										<li><a href="">Hình thức thanh toán</a></li> 
+                                        <li><a href="lichsuhinhthanh.php">Lịch sử hình thành</a></li>
+										<li><a href="hethongchinhanh.php">Hệ thống chi nhánh</a></li> 
+										<li><a href="hinhthucthanhtoan.php">Hình thức thanh toán</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Quản lý danh mục<i class="fa fa-angle-down"></i></a>
@@ -190,7 +190,7 @@ if(isset($_GET['func'])&isset($_GET['ma']))
                                 </li> 
 								<li><a href="">Giỏ hàng</a></li>
                                 <li><a href="">Góp ý</a></li>
-								<li><a href="">Liên hệ</a></li>
+								<li><a href="lienhe.php">Liên hệ</a></li>
 							</ul>
 						</div>
 					</div>
@@ -205,27 +205,24 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 	</header>
    <!--/header-->
    <table width="100%" border="0" cellspacing="0" cellpadding="5">
-	  <tr>
-	    <td colspan="2" valign="top"><p>   Tô Mỳ đã được thành lập vào ngày 1 tháng 4 năm 1976 bởi Steve Jobs, Steve Wozniak, và Ronald Wayne, để bán bộ sản phẩm đ thoại cá nhân Apple I. Sản phẩm này được xây dựng bởi Wozniak và lần đầu tiên được công bố tạiHomebrew Computer Club. Apple I được bán bao gồm bo mạch chủ (với CPU, RAM, và chip xử lý đồ họa cơ bản)ít hơn những gì mà chúng ta xem là một sản phẩm máy tính cá nhân hoàn thiện ngày nay. Apple I bắt đầu bán vào tháng 7 năm 1976 với giá thị trường là $666,66 (thời giá 1976), đã điều chỉnh lạm phát.) </p>
-	      <p>Tháng 10 năm 2001, Tô mỳ STORE giới thiệu sản phẩm máy nghe nhạc Ipod cầm tay. Phiên bản đầu tiên có ổ đĩa 5 GB, và chứa khoảng 1000 bài hát nhưng khá cồng kềnh và không được mọi người chú ý. Jonathan Ive là người thiết kế, và ông đã nâng cấp các thế hệ Ipod nhiều lần. Năm 2002 Apple thỏa thuận với các hãng ghi âm về việc bán nhạc trên iTunes Music Store. Với gian hàng này mọi người có thể sử dụng để mà ghi đĩa cd, phân chia và chơi nhạc trên ba máy vi tính và tất nhiên chuyển bài hát lên máy nghe nhạc iPod.<br>
-	      </p>
-        <p>&nbsp;</p></td>
-	    <td width="25%"><img src="img/dt1.JPG" alt="a" width="196" height="195"></td>
+     <tr>
+       <td width="6%">&nbsp;</td>
+       <td width="67%"><p> Tô Mỳ đã được thành lập vào ngày 1 tháng 4 năm 1976 bởi  Steve Jobs, Steve Wozniak, và Ronald Wayne, để bán bộ sản phẩm đ thoại cá nhân  Apple I. Sản phẩm này được xây dựng bởi Wozniak và lần đầu tiên được công bố tạiHomebrew  Computer Club. Apple I được bán bao gồm bo mạch chủ (với CPU, RAM, và chip xử  lý đồ họa cơ bản)ít hơn những gì mà chúng ta xem là một sản phẩm máy tính cá  nhân hoàn thiện ngày nay. Apple I bắt đầu bán vào tháng 7 năm 1976 với giá thị  trường là $666,66 (thời giá 1976), đã điều chỉnh lạm phát.) <br>
+         <br>
+       Tháng 10 năm 2001, Tô mỳ STORE  giới thiệu sản phẩm máy nghe nhạc Ipod cầm tay. Phiên bản đầu tiên có ổ đĩa 5  GB, và chứa khoảng 1000 bài hát nhưng khá cồng kềnh và không được mọi người chú  ý. Jonathan Ive là người thiết kế, và ông đã nâng cấp các thế hệ Ipod nhiều lần.  Năm 2002 Apple thỏa thuận với các hãng ghi âm về việc bán nhạc trên iTunes  Music Store. Với gian hàng này mọi người có thể sử dụng để mà ghi đĩa cd, phân  chia và chơi nhạc trên ba máy vi tính và tất nhiên chuyển bài hát lên máy nghe  nhạc iPod.</p></td>
+       <td width="21%"><img src="img/dt1.JPG" alt="1" width="238" height="158"></td>
+       <td width="6%">&nbsp;</td>
      </tr>
-	  <tr>
-	    <td height="153" colspan="2" valign="top"><p>Tô Mỳ STORE đã hợp nhất vào ngày 3 tháng 1 năm 1977 mà không có Wayne, ông ta đã bán lại toàn bộ số cổ phần của mình cho Jobs và Wozniak với số tiền là $800. Một nhà triệu phú Mike Markkula đã giúp đỡ bằng những kinh nghiệm kinh doanh thiết yếu và một khoản đầu tư trị giá $250,000 trong suốt giai đoạn non trẻ của Apple.</p>
-        <p>Hơn hai triệu bài hát đầu tiên đã được bán trên iTunes Music Store trong vòng 16 ngày; mọi người mua qua máy Macintosh. Chương trình iTunes cũng hoạt động trên Windows. </p></td>
-	    <td><img src="img/dt2.JPG" alt="aaa" width="196" height="171"></td>
-      </tr>
-	  <tr>
-	    <td width="50%">&nbsp;</td>
-	    <td width="25%">&nbsp;</td>
-	    <td>&nbsp;</td>
-      </tr>
-  </table>
-
-	<div class="footer-top-area">
-      <div class="zigzag-bottom"></div>
+     <tr>
+       <td>&nbsp;</td>
+       <td valign="top"><p>Tô Mỳ STORE đã hợp nhất vào ngày 3 tháng 1 năm 1977 mà không  có Wayne, ông ta đã bán lại toàn bộ số cổ phần của mình cho Jobs và Wozniak với  số tiền là $800. Một nhà triệu phú Mike Markkula đã giúp đỡ bằng những kinh  nghiệm kinh doanh thiết yếu và một khoản đầu tư trị giá $250,000 trong suốt  giai đoạn non trẻ của Apple.<br>
+       Hơn hai triệu  bài hát đầu tiên đã được bán trên iTunes Music Store trong vòng 16 ngày; mọi  người mua qua máy Macintosh. Chương trình iTunes cũng hoạt động trên Windows. </p></td>
+       <td><img src="img/dt2.JPG" alt="2" width="238" height="158"></td>
+       <td>&nbsp;</td>
+     </tr>
+   </table>
+   <div class="footer-top-area">
+     <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">

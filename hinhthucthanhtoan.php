@@ -177,9 +177,9 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 								<li><a href="index.php" class="active">Trang chủ</a></li>
 								<li class="dropdown"><a href="gioithieu.php">Giới thiệu<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="">Lịch sử hình thành</a></li>
-										<li><a href="">Hệ thống chi nhánh</a></li> 
-										<li><a href="">Hình thức thanh toán</a></li> 
+                                        <li><a href="lichsuhinhthanh.php">Lịch sử hình thành</a></li>
+										<li><a href="hethongchinhanh.php">Hệ thống chi nhánh</a></li> 
+										<li><a href="hinhthucthanhtoan.php">Hình thức thanh toán</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Quản lý danh mục<i class="fa fa-angle-down"></i></a>
@@ -190,7 +190,7 @@ if(isset($_GET['func'])&isset($_GET['ma']))
                                 </li> 
 								<li><a href="">Giỏ hàng</a></li>
                                 <li><a href="">Góp ý</a></li>
-								<li><a href="">Liên hệ</a></li>
+								<li><a href="lienhe.php">Liên hệ</a></li>
 							</ul>
 						</div>
 					</div>
@@ -207,21 +207,21 @@ if(isset($_GET['func'])&isset($_GET['ma']))
    <!--/header-->
   <table width="100%" border="0" cellspacing="0" cellpadding="5">
      <tr>
-       <td height="252" valign="top"><p><strong>1. Thanh toán bằng tiền mặt</strong></p>
-       <p><img src="img/tt.JPG" alt="tt" width="264"></p>
-       <p>Showroom 1 : Số 103 - 105 Lê Thanh Nghị– Đồng Tâm - Hai Bà Trưng– Cần Thơ.<br>
+       <td width="4%" height="252" valign="top"><p>&nbsp;</p></td>
+       <td width="95%"><p><strong>1. Thanh toán bằng tiền mặt</strong></p>
+         <p><img src="img/tt.JPG" alt="tt" width="264"></p>
+         <p>Showroom 1 : Số 103 - 105 Lê Thanh Nghị– Đồng Tâm - Hai Bà Trưng– Cần Thơ.<br>
        Showroom 2 : Số 58 Hồ Tùng Mậu  – Cầu Giấy –Cần Thơ.</p></td>
-       <td>&nbsp;</td>
-       <td>&nbsp;</td>
+       <td width="1%">&nbsp;</td>
      </tr>
      <tr>
-       <td height="241"><p><strong>2. Thanh toán bằng chuyển khoản</strong></p>
+       <td height="241"><p>&nbsp;</p></td>
+       <td><p><strong>2. Thanh toán bằng chuyển khoản</strong></p>
          <p><img src="img/ck.JPG" alt="ck" width="265"></p>
-       <p>Quý khách chuyển tiền cho chúng tôi vào một trong các tài khoản sau đây:</p>
-       <p><strong>Số tài khoản Ngân Hàng ACB <em>chi nhánh Thăng Long</em>: </strong>538 22 399<br>
-         <strong>Số tài khoản Ngân Hàng BIDV <em>chi nhánh Quang Trung</em>: </strong>1231 00000 65864<br>
-       <strong>Số tài khoản Ngân Hàng EXIM <em>chi nhánh Hà Nội</em></strong>: 100 11485 100 2821</p></td>
-       <td>&nbsp;</td>
+         <p>Quý khách chuyển tiền cho chúng tôi vào một trong các tài khoản sau đây:</p>
+         <p><strong>Số tài khoản Ngân Hàng ACB <em>chi nhánh Lý Tự Trọng -Tp Cần Thơ</em>: </strong>538 22 399<br>
+           <strong>Số tài khoản Ngân Hàng BIDV <em>chi nhánh Đông Văn Cống -Tp Cần Thơ</em>: </strong>1231 00000 65864<br>
+       <strong>Số tài khoản Ngân Hàng EXIM <em>chi nhánh Phan Đình Phùng - Tp Cần Thơi</em></strong>: 100 11485 100 2821</p></td>
        <td>&nbsp;</td>
     </tr>
    </table>

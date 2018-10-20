@@ -176,9 +176,9 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 								<li class="dropdown"><strong><a href="gioithieu.php">Giới thiệu</a>
                                   </strong>
 								  <ul role="menu" class="sub-menu">
-                                      <li><strong><a href="">Lịch sử hình thành</a></strong></li>
-									  <li><strong><a href="">Hệ thống chi nhánh</a></strong></li> 
-									  <li><strong><a href="">Hình thức thanh toán</a></strong></li> 
+                                      <li><strong><a href="lichsuhinhthanh.php">Lịch sử hình thành</a></strong></li>
+									  <li><strong><a href="hethongchinhanh.php">Hệ thống chi nhánh</a></strong></li> 
+									  <li><strong><a href="hinhthucthanhtoan.php">Hình thức thanh toán</a></strong></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><strong><a href="#">Quản lý danh mục</a>
@@ -190,7 +190,7 @@ if(isset($_GET['func'])&isset($_GET['ma']))
                                 </li> 
 								<li><strong><a href="">Giỏ hàng</a></strong></li>
                                 <li><strong><a href="">Góp ý</a></strong></li>
-								<li><strong><a href="">Liên hệ</a></strong></li>
+								<li><strong><a href="lienhe.php">Liên hệ</a></strong></li>
 							</ul>
 						</div>
 					</div>
@@ -210,13 +210,40 @@ if(isset($_GET['func'])&isset($_GET['ma']))
    <strong><!--/header-->
    
    </strong>
-   <p><strong> 1. 1315B - 1315C ấp Vĩnh Quới, Thị Trấn. Vĩnh Thạnh, Huyện Vĩnh Thạnh, Thành phố Cần Thơ </strong></p>
-   
-    <p><strong> 2. 228/1C - 228/1Đ Trần Hưng Đạo, Phường An Nghiệp, Quận Ninh Kiều, Thành phố Cần Thơ</strong></p>
-     
-    <p><strong> 3. 81 - 83 Trần Văn Khéo, Phường Cái Khế, Quận Ninh Kiều, Thành phố Cần Thơ</strong></p>
-     
-     <p><strong>4. 415 - 418 Quốc lộ 1A, KV Yên Hạ, Phường Lê Bình, Quận Cái Răng, Thành phố Cần Thơ</strong></p>
+   <table width="100%" border="0" cellspacing="0" cellpadding="5">
+     <tr>
+       <td width="9%">&nbsp;</td>
+       <td width="41%"><h3>Cửa hàng Tô Mỳ STORE Việt Nam</h3>
+         <p>Địa chỉ: Số 01 - Lý Tự Trọng - Q. Ninh Kiều - TP cần Thơ <br>
+           Email: <a href="mailto:kinhdoanh@salomon.vn" target="_blank">kinhdoanh@salomon.vn</a> <br>
+       Điện thoại: (07103 731072)</p>
+       <p> <img src="img/3.JPG" alt="3" width="210" height="188"></p></td>
+       <td width="25%">&nbsp;</td>
+       <td width="25%">&nbsp;</td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+       <td><h3>Cửa hàng  Tô Mỳ STORE Việt Nam</h3>
+         <p>Địa chỉ: Số 02 - Phan Đình Phùng - Q. Ninh Kiều - TP cần Thơ <br>
+           Email: <a href="mailto:kinhdoanh@salomon.vn" target="_blank">kinhdoanh@salomon.vn</a> <br>
+       Điện thoại: (07103 730744)       </p>
+       <p> <img src="img/4.JPG" alt="4" width="236" height="163"></p></td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+       <td><h3>Cửa hàng  Tô Mỳ STORE Việt Nam</h3>
+         <p>Địa chỉ: Số 013- Đông Văn Cống - Q. Ninh Kiều - TP cần Thơ <br>
+           Email: <a href="mailto:kinhdoanh@salomon.vn" target="_blank">kinhdoanh@salomon.vn</a> <br>
+       Điện thoại: (07103 731074)</p>
+       <p> <img src="img/5.JPG" alt="5" width="223" height="164"></p></td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+   </table>
+   <h3>&nbsp;</h3>
+   <p>&nbsp;</p>
    
    <div class="footer-top-area">
      <div class="zigzag-bottom"></div>

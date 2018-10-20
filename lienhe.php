@@ -177,9 +177,9 @@ if(isset($_GET['func'])&isset($_GET['ma']))
 								<li><a href="index.php" class="active">Trang chủ</a></li>
 								<li class="dropdown"><a href="gioithieu.php">Giới thiệu<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="">Lịch sử hình thành</a></li>
-										<li><a href="">Hệ thống chi nhánh</a></li> 
-										<li><a href="">Hình thức thanh toán</a></li> 
+                                        <li><a href="lichsuhinhthanh.php">Lịch sử hình thành</a></li>
+										<li><a href="hethongchinhanh.php">Hệ thống chi nhánh</a></li> 
+										<li><a href="hinhthucthanhtoan.php">Hình thức thanh toán</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Quản lý danh mục<i class="fa fa-angle-down"></i></a>
@@ -190,7 +190,7 @@ if(isset($_GET['func'])&isset($_GET['ma']))
                                 </li> 
 								<li><a href="">Giỏ hàng</a></li>
                                 <li><a href="">Góp ý</a></li>
-								<li><a href="">Liên hệ</a></li>
+								<li><a href="lienhe.php">Liên hệ</a></li>
 							</ul>
 						</div>
 					</div>
@@ -208,42 +208,31 @@ if(isset($_GET['func'])&isset($_GET['ma']))
    <table width="100%" border="0" cellspacing="0" cellpadding="5">
      <tr>
        <td width="5%">&nbsp;</td>
-       <td width="62%" rowspan="3"><div>
-         <div>Hà Nội</div>
+       <td width="64%" rowspan="3"><div>
          <div>
+           <h2>Công ty mua bán điện thoại Tô Mỳ  STORE Việt Nam</h2>
+           <strong>Địa chỉ:</strong> Số 01 - Lý Tự Trọng - Q. Ninh Kiều - TP cần Thơ <br>
+           <strong>Email:</strong> <u><a href="mailto:kinhdoanh@salomon.vn" target="_blank">kinhdoanh@salomon.vn</a></u> <br>
+           <strong>Điện thoại:</strong> (07103 731072) <br>
+           <strong>Fax:</strong> (07103 731072) <br>
+         <strong>Website:</strong> <em><a href="http://salomon.vn/" target="_blank">salomon.vn</a> </em></div>
+         <div>
+           <div>           </div>
            <div>
              <address>
-               120 Thái Hà, Q. Đống Đa | <a href="https://mobilecity.vn/lien-he/?cs=1">Xem bản đồ</a>
-             </address>
-             <p>Điện thoại: <a href="tel:0971206688">097.120.6688</a> - <a href="tel:0969120120 <p>Trung h%E1%BB%97 tr%E1%BB%A3: 0964120120">0969.120.120</a></p>
-             <p><a href="tel:0969120120 <p>Trung h%E1%BB%97 tr%E1%BB%A3: 0964120120">Trung hỗ trợ: 0964.120.120</a></p>
-           </div>
-           <div>
-             <address>
-               398 Cầu Giấy, Q. Cầu Giấy | <a href="https://mobilecity.vn/lien-he/?cs=2">Xem bản đồ</a>
-             </address>
-             <p>Điện thoại: <a href="tel:0961111398">096.1111.398</a> - <a href="tel:0962222398">096.2222.398</a></p>
-           </div>
-         </div>
-       </div>
-         <div>
-           <div>TP.Hồ Chí Minh</div>
+             </address></div></div></div><div>
            <div>
              <div>
                <address>
-                 123 Trần Quang Khải, Q.1 | <a href="https://mobilecity.vn/lien-he/?cs=3">Xem bản đồ</a>
                </address>
-               <p>Điện thoại: <a href="tel:0965123123">0965.123.123</a> - <a href="tel:0969520520">0969.520.520</a></p>
              </div>
              <div>
                <address>
-                 602 Lê Hồng Phong, P.10, Q.10 | <a href="https://mobilecity.vn/lien-he/?cs=4">Xem bản đồ</a>
                </address>
-               <p>Điện thoại: <a href="tel:0971111602">097.1111.602</a> - <a href="tel:0973333602">097.3333.602</a></p>
              </div>
            </div>
        </div></td>
-       <td width="33%">&nbsp;</td>
+       <td width="31%">&nbsp;</td>
      </tr>
      <tr>
        <td>&nbsp;</td>
