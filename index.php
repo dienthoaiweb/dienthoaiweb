@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salomon - Siêu thị điện máy</title>
+    <title>Tô Mì Store - Siêu thị điện thoại và máy tính</title>
     
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -342,7 +342,7 @@ include_once("dbconnect.php");
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2017 Salomon. Bản quyền thuộc CUSC. <a href="http://www.cusc.vn" target="_blank">cusc.vn</a></p>
+                        <p>&copy; 2018 Tommy Store. Bản quyền thuộc Tommy Store team. <a href="http://www.cusc.vn" target="_blank">cusc.vn</a></p>
                     </div>
                 </div>
                 
