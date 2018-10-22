@@ -239,6 +239,9 @@ include_once("dbconnect.php");
 		elseif($khoatrang=="thanhtoan"){
 			include_once("thanhtoan.php");
 		}
+		elseif($khoatrang=="logout"){
+			include_once("logout.php");
+		}
 		elseif($khoatrang=="capnhatkhachhang"){
 			include_once("capnhatkhachhang.php");
 		}
