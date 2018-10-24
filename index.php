@@ -185,7 +185,7 @@ include_once("dbconnect.php");
                                 </li> 
 								<li class="dropdown"><a href="#">Quản lý danh mục<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                      <li><a href="#">Nhà sản xuất</a></li>
+                                      <li><a href="?khoatrang=quanlynhasanxuat">Nhà sản xuất</a></li>
                                       <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
                                       <li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
                                       <li><a href="#">Đơn hàng</a></li>
@@ -218,6 +218,15 @@ include_once("dbconnect.php");
 		}
 		elseif($khoatrang=="quanlyloaisanpham_capnhat"){
 			include_once("quanly_loaisanpham_capnhat.php");
+		}
+		elseif($khoatrang=="quanlynhasanxuat"){
+			include_once("quanly_nhasanxuat.php");
+		}
+		elseif($khoatrang=="quanlynhasanxuat_capnhat"){
+			include_once("quanly_nhasanxuat_capnhat.php");
+		}
+		elseif($khoatrang=="quanlynhasanxuat_themmoi"){
+			include_once("quanly_nhasanxuat_themmoi.php");
 		}
 		elseif($khoatrang=="quanlysanpham"){
 			include_once("quanly_sanpham.php");
