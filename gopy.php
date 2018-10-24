@@ -5,6 +5,7 @@
  };
  </script>
 <script src="https://www.google.com/recaptcha/api.js?hl=vi"></script>
+
  <?php
 include 'dbconnect.php';
 include 'sendMailLib.php';
@@ -15,10 +16,10 @@ $secret_key  = '6LdUbz0UAAAAANK4nW--LWfbevhd-IqB_HFNXdgx'; //Secretkey luc dang 
 if(isset($_POST['btnGopY'])){
 	
 	$hoten=$_POST['txtHoTen'];
-	
 	$email = $_POST['txtEmail'];
 	$diachi = $_POST['txtDiaChi'];
 	$dienthoai = $_POST['txtDienThoai'];
+	$tieude = $_POST['txtTieuDe'];
 	$noidung = $_POST['txtNoiDung'];
 		
 	$loi = "";
@@ -57,14 +58,16 @@ if(isset($_POST['btnGopY'])){
 		echo "<ul class='cssLoi'>".$loi."</ul>";
 	}
 	else{
-		$sq = "SELECT * FROM gopy WHERE gy_hoten='$hoten' OR gy_email='$email'";
+		$sq = "SELECT * FROM gopy WHERE gy_hoten='$hoten'";
 		$ketqua = mysqli_query($conn,$sq);
 		if(mysqli_num_rows($ketqua)==0)
 		{
-		mysqli_query($conn, "INSERT INTO gopy (gy_hoten, gy_email, gy_diachi, gy_dienthoai, gy_noidung )
-		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', '$noidung' )") or die(mysqli_error($conn));
+		mysqli_query($conn, "INSERT INTO gopy (gy_hoten, gy_email, gy_diachi, gy_dienthoai, gy_tieude, gy_noidung )
+		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', $tieude, '$noidung' )") or die(mysqli_error($conn));
+		
 		
 		echo "<script language='javascript'>window.location='index.php'</script>";
+		
 		}
 	}
 }
@@ -169,3 +172,4 @@ if(isset($_POST['btnGopY'])){
 									  //$publickey = "6Lf0Zj0UAAAAAKn7ozxvayzEa_Ctr08DNDaBnOVc"; 
 									  //echo recaptcha_get_html($publickey);
 								?> 
+<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
