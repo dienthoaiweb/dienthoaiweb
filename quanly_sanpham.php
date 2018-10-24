@@ -1,3 +1,4 @@
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
  		<script src="js/jquery-3.2.0.min.js"/></script>
@@ -124,7 +125,3 @@
         </div><!--Nút chức nang-->
  </form>
  
- <?php 
-
-
-?>

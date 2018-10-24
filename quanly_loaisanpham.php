@@ -1,7 +1,4 @@
-<?php
-	if(isset($_SESSION["quantri"]) && $_SESSION["quantri"]==1)
-	{
-?>
+
     <!-- Bootstrap --> 
     <link rel="stylesheet" type="text/css" href="style.css"/>
 	<meta charset="utf-8" />
@@ -48,7 +45,7 @@
 } );		
     </script>     
         <?php
-		include_once 'connection.php';
+		include_once 'dbconnect.php';
 			//Kiểm tra xem có truyền mã  cần xóa
 			if(isset($_GET["ma"]))
 			{
@@ -72,7 +69,7 @@
         <form name="frmXoa" method="post" action="">
         <h1>Danh sách loại sản phẩm</h1>
         <p>
-        <a href="index.php?khoatrang=quanlyloaisanpham_themmoi">
+        <a href="quanly_loaisanpham_themmoi.php">
         <img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" /> Thêm mới</a>
         </p>
         <table id="tablesalomon" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -124,12 +121,5 @@
             </div>
         </div><!--Nút chức nang-->
  </form>
- <?php
-	}
-	else
-	{
-		echo "<script>alert('Ban khong phai la quan tri vien')</script>";
-		echo "<script language='javascript'>window.location='index.php'</script>";
-	}
- ?>
+
    

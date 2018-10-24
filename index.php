@@ -185,8 +185,12 @@ include_once("dbconnect.php");
                                 </li> 
 								<li class="dropdown"><a href="#">Quản lý danh mục<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
-										<li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
+                                      <li><a href="#">Nhà sản xuất</a></li>
+                                      <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
+                                      <li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
+                                      <li><a href="#">Đơn hàng</a></li>
+                                      <li><a href="#">Khách hàng</a></li>
+                                      <li><a href="#">Góp ý</a></li>
                                     </ul>
                                 </li> 
 								<li><a href="?khoatrang=giohang">Giỏ hàng</a></li>
@@ -227,6 +231,9 @@ include_once("dbconnect.php");
 		elseif($khoatrang=="quanly_chitietsanpham"){
 			include_once("quanly_chitietsanpham.php");
 		}
+		elseif($khoatrang=="quanlysanpham_themmoi"){
+			include_once("quanly_sanpham_themmoi.php");
+		}
 		elseif($khoatrang=="giohang"){
 			include_once("giohang.php");
 		}
@@ -258,6 +265,9 @@ include_once("dbconnect.php");
 		}
 		elseif($khoatrang=="timkiem"){
 		include_once("timkiem.php");
+		}
+		elseif($khoatrang=="quanlydanhmuc"){
+		include_once("quanly_danhmuc.php");
 		}
 		
 	}

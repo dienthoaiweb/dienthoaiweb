@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
 <?php
-		include_once("connection.php");
+		include_once("dbconnect.php");
     	if(isset($_GET["ma"])){
 			$ma = $_GET["ma"];
 			$sqlstring = "select sp_ten, sp_mota_ngan, sp_mota_chitiet, sp_gia, sp_soluong, lsp_ma, nsx_ma from sanpham where sp_ma=".$ma;

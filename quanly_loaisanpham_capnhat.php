@@ -3,7 +3,7 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
    <?php
-    include_once("connection.php");
+    include_once("dbconnect.php");
 	if(isset($_GET["ma"]))
 			{
 				$ma = $_GET["ma"];
