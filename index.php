@@ -243,6 +243,9 @@ include_once("dbconnect.php");
 		elseif($khoatrang=="dangnhap"){
 			include_once("dangnhap.php");
 		}
+		elseif($khoatrang=="gopy"){
+			include_once("gopy.php");
+		}
 		elseif($khoatrang=="thanhtoan"){
 			include_once("thanhtoan.php");
 		}
