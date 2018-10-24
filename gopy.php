@@ -115,7 +115,7 @@ if(isset($_POST['btnGopY'])){
                          <div class="form-group">  
                             <label for="lblNoiDung" class="col-sm-2 control-label">Nội dung chi tiết(*):  </label>
 							<div class="col-sm-10">
-							      <textarea name="txtNoiDung" rows="4" class="ckeditor"><?php echo $noidung ?>
+							      <textarea name="txtNoiDung" rows="4" class="ckeditor" value="<?php echo $noidung ?>">
                                   </textarea>
               <script language="javascript">
                                         CKEDITOR.replace( 'txtNoiDung',
