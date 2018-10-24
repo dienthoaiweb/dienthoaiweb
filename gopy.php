@@ -65,7 +65,7 @@ if(isset($_POST['btnGopY'])){
 		mysqli_query($conn, "INSERT INTO gopy (gy_hoten, gy_email, gy_diachi, gy_dienthoai, gy_tieude, gy_noidung )
 		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', '$tieude', '$noidung' )") or die(mysqli_error($conn));
 		
-		
+		echo "<script >alert('Cảm ơn')</script>";
 		echo "<script language='javascript'>window.location='index.php'</script>";
 		
 		}
