@@ -63,7 +63,7 @@ if(isset($_POST['btnGopY'])){
 		if(mysqli_num_rows($ketqua)==0)
 		{
 		mysqli_query($conn, "INSERT INTO gopy (gy_hoten, gy_email, gy_diachi, gy_dienthoai, gy_tieude, gy_noidung )
-		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', $tieude, '$noidung' )") or die(mysqli_error($conn));
+		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', '$tieude', '$noidung' )") or die(mysqli_error($conn));
 		
 		
 		echo "<script language='javascript'>window.location='index.php'</script>";
