@@ -188,7 +188,7 @@ include_once("dbconnect.php");
                                       <li><a href="?khoatrang=quanlynhasanxuat">Nhà sản xuất</a></li>
                                       <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
                                       <li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
-                                      <li><a href="#">Đơn hàng</a></li>
+                                      <li><a href="?khoatrang=quanlydathang">Đơn hàng</a></li>
                                       <li><a href="#">Khách hàng</a></li>
                                       <li><a href="#">Góp ý</a></li>
                                     </ul>
@@ -281,7 +281,9 @@ include_once("dbconnect.php");
 		elseif($khoatrang=="quanlydanhmuc"){
 		include_once("quanly_danhmuc.php");
 		}
-		
+		elseif($khoatrang=="quanlydathang"){
+		include_once("quanly_dathang.php");
+		}
 	}
 	else{
 		include("noidungtrangchu.php");
