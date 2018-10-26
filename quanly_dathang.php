@@ -6,7 +6,7 @@
        <script src="js/dataTables.bootstrap.min.js"/></script>
         <script language="javascript">
             function deleteConfirm(){
-                if(confirm("Bạn có chắc chắn muốn xóa!")){
+                if(confirm("Bạn có chắc chắn muốn hủy đơn hàng này không?")){
                     return true;
                 }
                 else{
@@ -61,27 +61,26 @@
 		?>
         <form name="frmXoa" method="post" action="">
         <h1>Quản lý đơn đặt hàng</h1>
-        <p>
-        	<a href="quanly_dathang_themmoi.php"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" /> Thêm mới</a>
-        </p>
+       </br>
         <table id="tablesalomon" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
             <thead>
                 <tr>
-               	    <th><strong>chọñ</strong></th>
+               	    <th><strong>Chọn</strong></th>
                     <th><strong>Mã đặt hàng̃</strong></th>
                     <th><strong>Ngày lập</strong></th>
                     <th><strong>Ngày giao</strong></th>
                     <th><strong>Nơi giao</strong></th>
-                    <th><strong>Trạng thái thanh toán</strong></th>
-                    <th><strong>Mã hình thức thanh toán</strong></th>
-                    <th><strong>Khách hàng tên đăng nhập</strong></th>
+                    <th><strong>Đã thanh toán</strong></th>
+                    <th><strong>Hình thức TT</strong></th>
+                    <th><strong>Khách hàng</strong></th>
+                    <th><strong>Hủy</strong></th>
                 </tr>
              </thead>
 
 			<tbody>
             <?php
 					
-				$result = mysqli_query($conn, "SELECT dh_ma, dh_ngaylap, dh_ngaygiao, dh_noigiao, dh_trangthaithanhtoan, httt_ma,kh_tendangnhap FROM dondathang");
+				$result = mysqli_query($conn, "SELECT dh_ma, dh_ngaylap, dh_ngaygiao, dh_noigiao, dh_trangthaithanhtoan, b.httt_ten,kh_tendangnhap FROM dondathang a, hinhthucthanhtoan b where a.httt_ma=b.httt_ma");
 				while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
 			?>
 			<tr>
@@ -89,19 +88,20 @@
               <td ><?php echo $row["dh_ma"] ?></td>
               <td><?php echo $row["dh_ngaylap"] ?></td>
               <td><?php echo $row["dh_ngaygiao"] ?></td>
-               <td ><?php echo $row["dh_noigiao"] ?></td>
-              <td><?php echo $row["dh_trangthaithanhtoan"] ?></td>
-              <td><?php echo $row["httt_ma"] ?></td>
-              <td><?php echo $row["kh_tendangnhap"] ?></td>
+              <td><?php echo $row["dh_noigiao"] ?></td>
               
-             <td align='center' class='cotNutChucNang'> <a href="quanly_sanpham_hinhanh.php?ma=<?php echo $row['dh_ma'] ?>"><img src='images/image_edit.png' border='0'  /></a>
-            
-             </td>
-             
-              <td align='center' class='cotNutChucNang'>
-              <a href="quanly_dathang_capnhat.php?ma=<?php echo $row['dh_ma'] ?>">
-              <img src='images/edit.png' border='0'/></a>
+              
+              <td align="center"><input name="checkbox_tt[]" type="checkbox" id="checkbox_tt[]" <?php 
+			  if($row["dh_trangthaithanhtoan"]==1)
+			  {
+				echo  'checked';
+			  }
+			  ?>/>
               </td>
+              
+              <td><?php echo $row["httt_ten"] ?></td>
+              <td><?php echo $row["kh_tendangnhap"] ?></td>
+            
               
               <td align='center' class='cotNutChucNang'>
               	<a onclick="return deleteConfirm()" href="quanly_dathang.php?ma=<?php echo $row['dh_ma'] ?>">
