@@ -45,15 +45,14 @@
 			//Kiểm tra xem có truyền mã để xóa không
 			if(isset($_GET["ma"])){
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$masanpham = $_GET["ma"];
-				mysqli_query($conn, "DELETE FROM sanpham WHERE dh_ma=$madathang");
-				echo '<meta http-equiv="refresh" content="0;URL=quanly_dathang.php"/>';
+				$madathang = $_GET["ma"];
+				mysqli_query($conn, "DELETE FROM dondathang WHERE dh_ma=$madathang");
 			}
 			
 			if(isset($_POST["btXoa"])&& isset($_POST["checkbox"]))
 			{
 				for ($i = 0; $i < count($_POST['checkbox']); $i++)
-				{$masanpham = $_POST["checkbox"][$i];
+				{$madathang = $_POST["checkbox"][$i];
 				mysqli_query($conn, "DELETE FROM dondathang WHERE dh_ma=$madathang");
 			}
 			}
