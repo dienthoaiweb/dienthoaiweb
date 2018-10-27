@@ -21,7 +21,7 @@ if(isset($_POST['btnGopY'])){
 	$dienthoai = $_POST['txtDienThoai'];
 	$tieude = $_POST['txtTieuDe'];
 	$noidung = $_POST['txtNoiDung'];
-		
+	$now = getdate();	
 	$loi = "";
 	//lấy dữ liệu được post lên
     $site_key_post    = $_POST['g-recaptcha-response']; 
@@ -145,7 +145,7 @@ if(isset($_POST['btnGopY'])){
                             </div>
                             
                          <div class="form-group">     
-                            <label for="lblNgayGopY" class="col-sm-2 control-label" value="<?php echo date('d-m-y H:i:s'); ?> "> Ngày gửi góp ý(*):  </label>
+                            <label for="lblNgayGopY" class="col-sm-2 control-label" value="<?php echo $now; ?> "> Ngày gửi góp ý(*):  </label>
                             <div class="col-sm-10">	      
                             <input name="txtNgayGiaoHang" id="txtNgayGiaoHang" type='date' class="form-control" />   
                             </div>
