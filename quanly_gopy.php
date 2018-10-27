@@ -110,7 +110,7 @@
         <div class="row" style="background-color:#FFF"><!--Nút chức nang-->
             <div class="col-md-12">
             	
-                <input type="submit" value="Xoa muc chon" name="btXoa" id="btXoa" onclick="return deleteConfirm()" class="btn btn-primary" />
+                <input type="submit" value="Xóa mục đã chọn" name="btXoa" id="btXoa" onclick="return deleteConfirm()" class="btn btn-primary" />
             </div>
         </div><!--Nút chức nang-->
  </form>
