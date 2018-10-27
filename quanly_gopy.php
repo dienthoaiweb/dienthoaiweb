@@ -43,11 +43,11 @@
         <?php
 			include_once 'dbconnect.php';
 			//Kiểm tra xem có truyền mã để xóa không
-			if(isset($_GET["ma"])){
+			if(isset($_GET["gy_ma"])){
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$magopy = $_GET["ma"];
+				$magopy = $_GET["gy_ma"];
 				mysqli_query($conn, "DELETE FROM gopy WHERE gy_ma=$magopy");
-				echo '<meta http-equiv="refresh" content="0;URL=gopy.php"/>';
+				echo '<meta http-equiv="refresh" content="0;URL=quanly_gopy.php"/>';
 			}
 			
 			if(isset($_POST["btXoa"])&& isset($_POST["checkbox"]))
@@ -60,7 +60,7 @@
 
 		?>
         <form name="frmXoa" method="post" action="">
-        <h1>Quản lý đơn đặt hàng</h1>
+        <h1>Quản lý góp ý</h1>
        </br>
         <table id="tablesalomon" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
             <thead>
@@ -84,7 +84,7 @@
 				while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
 			?>
 			<tr>
-              <td class="cotCheckBox"><input name="checkbox[]" type="checkbox" id="checkbox[]" value="<?php echo $row["dh_ma"]; ?>" /></td>
+              <td class="cotCheckBox"><input name="checkbox[]" type="checkbox" id="checkbox[]" value="<?php echo $row["gy_ma"]; ?>" /></td>
               <td ><?php echo $row["gy_ma"] ?></td>
               <td><?php echo $row["gy_ngaygopy"] ?></td>
               <td><?php echo $row["gy_email"] ?></td>
@@ -96,7 +96,7 @@
             
               
               <td align='center' class='cotNutChucNang'>
-              	<a onclick="return deleteConfirm()" href="gopy.php?ma=<?php echo $row['gy_ma'] ?>">
+              	<a onclick="return deleteConfirm()" href="quanly_gopy.php?ma=<?php echo $row['gy_ma'] ?>">
               	<img src='images/delete.png' border='0' /></a>
               </td>
             </tr>
