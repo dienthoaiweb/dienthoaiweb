@@ -240,6 +240,9 @@ include_once("dbconnect.php");
 		elseif($khoatrang=="quanly_chitietsanpham"){
 			include_once("quanly_chitietsanpham.php");
 		}
+		elseif($khoatrang=="quanly_khachhang"){
+			include_once("quanly_khachhang.php");
+		}
 		elseif($khoatrang=="quanlysanpham_themmoi"){
 			include_once("quanly_sanpham_themmoi.php");
 		}
