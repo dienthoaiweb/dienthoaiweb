@@ -101,7 +101,7 @@
               <td><?php echo $row["kh_tendangnhap"] ?></td>
               <td><?php echo $row["kh_matkhau"] ?></td>
               <td><?php echo $row["kh_ten"] ?></td>
-              <td><?php if($row["kh_ten"]==0)
+              <td><?php if($row["kh_gioitinh"]==0)
 			  {
 				echo 'Nam';
 				}
