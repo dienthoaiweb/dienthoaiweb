@@ -46,25 +46,21 @@
     </script>     
         <?php
 		include_once 'dbconnect.php';
-			//Kiểm tra xem có truyền mã  cần xóa
-			if(isset($_GET["ma1"]))
-			{
+			//Kiểm tra xem có truyền mã để xóa không
+			if(isset($_GET["ma"])){
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$khdangnhap = $_GET["ma1"];
-				mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khdangnhap");
+				$makhachhang = $_GET["ma"];
+						mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$makhachhang");
+				echo '<meta http-equiv="refresh" content="0;URL=quanly_khachhang.php"/>';
 			}
 			
-		?>
-        
-        <?php
-		if (isset($_POST['btnXoa'])&&isset($_POST['checkbox'])) 
-		{
-			for ($i = 0; $i < count($_POST['checkbox']); $i++) 
+			if(isset($_POST["btXoa"])&& isset($_POST["checkbox"]))
 			{
-						$khma = $_POST['checkbox'][$i];
-						mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khma");
+				for ($i = 0; $i < count($_POST['checkbox']); $i++)
+				{$makh = $_POST["checkbox"][$i];
+				mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$makh");
 			}
-		}
+			}
 		?>
         <form name="frmXoa" method="post" action="">
         <h1>Danh sách khách hàng</h1>

@@ -149,7 +149,7 @@ if(isset($_POST['btnGopY'])){
                             <div class="col-sm-10">	      
                             <input name="txtNgayGopY" id="txtNgayGopY" type='text' class="form-control" value="<?php
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-echo date('y-m-d');?> " />   
+echo date('Y-m-d');?> " />   
                             </div>
    						</div>
                            
