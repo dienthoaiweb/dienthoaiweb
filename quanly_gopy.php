@@ -43,9 +43,9 @@
         <?php
 			include_once 'dbconnect.php';
 			//Kiểm tra xem có truyền mã để xóa không
-			if(isset($_GET["gy_ma"])){
+			if(isset($_GET["ma"])){
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$magopy = $_GET["gy_ma"];
+				$magopy = $_GET["ma"];
 				mysqli_query($conn, "DELETE FROM gopy WHERE gy_ma=$magopy");
 				echo '<meta http-equiv="refresh" content="0;URL=quanly_gopy.php"/>';
 			}

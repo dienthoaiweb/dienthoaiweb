@@ -50,8 +50,8 @@
 			if(isset($_GET["ma"]))
 			{
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$maloai = $_GET["ma"];
-				mysqli_query($conn, "DELETE FROM loaisanpham WHERE lsp_ma=$maloai");
+				$khdangnhap = $_GET["ma"];
+				mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khdangnhap");
 			}
 			
 		?>
@@ -61,8 +61,8 @@
 		{
 			for ($i = 0; $i < count($_POST['checkbox']); $i++) 
 			{
-						$masanpham = $_POST['checkbox'][$i];
-						mysqli_query($conn, "DELETE FROM loaisanpham WHERE lsp_ma=$masanpham");
+						$khdanganhap = $_POST['checkbox'][$i];
+						mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khdangnhap");
 			}
 		}
 		?>
