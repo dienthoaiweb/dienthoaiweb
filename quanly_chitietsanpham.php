@@ -15,7 +15,6 @@ if(isset($_GET["ma"]))
 							from sanpham a join loaisanpham b on a.lsp_ma = b.lsp_ma
 							join nhasanxuat c on a.nsx_ma=c.nsx_ma
 							WHERE sp_ma=".$ma) or die(mysql_error());
-	
 	while ($row = mysqli_fetch_array($sanpham, MYSQLI_ASSOC)) {
 		$ten = $row['sp_ten'];
 		$loai = $row['lsp_ten'];

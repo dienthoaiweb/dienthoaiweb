@@ -43,17 +43,17 @@
         <?php
 			include_once 'dbconnect.php';
 			//Kiểm tra xem có truyền mã để xóa không
-			if(isset($_GET["ma"])){
+			if(isset($_GET["ma_delete"])){
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$madathang = $_GET["ma"];
-				mysqli_query($conn, "DELETE FROM dondathang WHERE dh_ma=$madathang");
+				$madathang = $_GET["ma_delete"];
+				mysqli_query($conn, "DELETE FROM dondathang WHERE dh_ma=". $madathang);
 			}
 			
 			if(isset($_POST["btXoa"])&& isset($_POST["checkbox"]))
 			{
 				for ($i = 0; $i < count($_POST['checkbox']); $i++)
 				{$madathang = $_POST["checkbox"][$i];
-				mysqli_query($conn, "DELETE FROM dondathang WHERE dh_ma=$madathang");
+				mysqli_query($conn, "DELETE FROM dondathang WHERE dh_ma=". $madathang);
 			}
 			}
 
@@ -72,6 +72,7 @@
                     <th><strong>Đã thanh toán</strong></th>
                     <th><strong>Hình thức TT</strong></th>
                     <th><strong>Khách hàng</strong></th>
+                    <th><strong>Chi tiết đơn hàng</strong></th>
                     <th><strong>Hủy</strong></th>
                 </tr>
              </thead>
@@ -100,10 +101,12 @@
               
               <td><?php echo $row["httt_ten"] ?></td>
               <td><?php echo $row["kh_tendangnhap"] ?></td>
-            
+              <td align="center">
+              <a href="quanly_dathang_chitiet.php?ma=<?php echo $row['dh_ma']?>">Xem</a>
+              </td>
               
               <td align='center' class='cotNutChucNang'>
-              	<a onclick="return deleteConfirm()" href="quanly_dathang.php?ma=<?php echo $row['dh_ma'] ?>">
+              	<a onclick="return deleteConfirm()" href="quanly_dathang.php?ma_delete=<?php echo $row['dh_ma'] ?>">
               	<img src='images/delete.png' border='0' /></a>
               </td>
             </tr>
