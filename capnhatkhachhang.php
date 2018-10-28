@@ -8,15 +8,36 @@ $email=$row['kh_email'];
 $hoten=$row['kh_ten'];
 $diachi=$row['kh_diachi'];
 $dienthoai=$row['kh_dienthoai'];
-
+// Cập nhật KH khi nhấn vào nút cập nhật 
 if(isset($_POST['btnCapNhat'])){
-	if($_POST['txtMatKhau']!=""){
+	if($_POST['txtMatKhau1']!="")
+	{
+		$matkhau=$_POST['txtMatKhau1'];
+	}
+	$hoten=$_POST['txtHoTen'];
+	$diachi=$_POST['txtDiaChi'];
+	$dienthoai=$_POST['txtDienThoai'];
+	
+	$kiemtra=kiemTra();
+	if($kiemtra="")
+	// Khách hàng có thay đổi mật khẩu
+	{
+		if($_POST['txtMatKhau1']!="")
+		{
+			mysqli_query($conn, "UPDATE khachhang set kh_ten'".$hoten."',kh_diachi='".$diachi."',kh_dienthoai='".$dienthoai."',kh_matkhau='".md5($_POST['txtMatKhau'])."' where kh_tendangnhap = '".$_SESSION['tendangnhap']."'")or die(mysqli_error($conn));
+		}
+	// Khách hàng ko thay đổi mật khẩu	
+	else
+	{
 		mysqli_query($conn, "UPDATE khachhang set kh_ten'".$hoten."',kh_diachi='".$diachi."',kh_dienthoai='".$dienthoai."',kh_matkhau='".md5($_POST['txtMatKhau'])."' where kh_tendangnhap = '".$_SESSION['tendangnhap']."'")or die(mysqli_error($conn));
 	}
 	echo "<scrip> alert('Cap nhat thanh cong');window.location='index.php'; </script>";
-}else{
-	echo $kiemtra;
+}
+	else
+	{
+		echo $kiemtra;
 	}
+}
 ?>
 <div class="container">
 	
@@ -26,14 +47,14 @@ if(isset($_POST['btnCapNhat'])){
 					<div class="form-group">	    
                       <label for="lblTenDangNhap" class="col-sm-2 control-label">Tên đăng nhập(*):  </label>
 						<div class="col-sm-10">
-						  <label class="form-control" style="font-weight:400"><?php  ?></label>
+						  <label class="form-control" style="font-weight:400"><?php  echo $tendangnhap; ?></label>
 					     </div>
                      </div>
                            
                          <div class="form-group">   
                             <label for="lblEmail" class="col-sm-2 control-label">Email(*):  </label>
 							<div class="col-sm-10">
-							       <label class="form-control" style="font-weight:400"><?php  ?></label>
+							       <label class="form-control" style="font-weight:400"><?php $email; ?></label>
 							</div>
                           </div>  
                           
@@ -54,21 +75,21 @@ if(isset($_POST['btnCapNhat'])){
                               <div class="form-group">                         
                             <label for="lblHoten" class="col-sm-2 control-label">Họ tên(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtHoTen" id="txtHoTen" value="<?php  ?>" class="form-control" placeholder="Giá"/>
+							      <input type="text" name="txtHoTen" id="txtHoTen" value="<?php $hoten ?>" class="form-control" placeholder="Giá"/>
 							</div>
                             </div>
                            
                              <div class="form-group"> 
                              <label for="lblDiaChi" class="col-sm-2 control-label">Địa chỉ(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtDiaChi" id="txtDiaChi" value="<?php  ?>" class="form-control" placeholder="Địa chỉ"/>
+							      <input type="text" name="txtDiaChi" id="txtDiaChi" value="<?php $diachi ?>" class="form-control" placeholder="Địa chỉ"/>
 							</div>
                             </div>
                             
                             <div class="form-group"> 
                             <label for="lblDienThoai" class="col-sm-2 control-label">Điện thoại(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtDienThoai" id="txtDienThoai" value="<?php  ?>" class="form-control" placeholder="Điện thoại" />
+							      <input type="text" name="txtDienThoai" id="txtDienThoai" value="<?php $dienthoai ?>" class="form-control" placeholder="Điện thoại" />
 							</div>
                             </div>
 
