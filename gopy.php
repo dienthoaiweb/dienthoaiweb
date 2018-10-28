@@ -21,7 +21,7 @@ if(isset($_POST['btnGopY'])){
 	$dienthoai = $_POST['txtDienThoai'];
 	$tieude = $_POST['txtTieuDe'];
 	$noidung = $_POST['txtNoiDung'];
-	$now = getdate();	
+	$ngayguigopy = 	$_POST['txtNgayGopY'];
 	$loi = "";
 	//lấy dữ liệu được post lên
     $site_key_post    = $_POST['g-recaptcha-response']; 
@@ -62,10 +62,10 @@ if(isset($_POST['btnGopY'])){
 		$ketqua = mysqli_query($conn,$sq);
 		if(mysqli_num_rows($ketqua)==0)
 		{
-		mysqli_query($conn, "INSERT INTO gopy (gy_hoten, gy_email, gy_diachi, gy_dienthoai, gy_tieude, gy_noidung )
-		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', '$tieude', '$noidung' )") or die(mysqli_error($conn));
+		mysqli_query($conn, "INSERT INTO gopy (gy_hoten, gy_email, gy_diachi, gy_dienthoai, gy_tieude, gy_noidung, gy_ngaygopy )
+		VALUES ('$hoten', '$email', '$diachi', '$dienthoai', '$tieude', '$noidung', '$ngayguigopy' )") or die(mysqli_error($conn));
 		
-		echo "<script >alert('Cảm ơn')</script>";
+		echo "<script >alert('Cảm ơn bạn đã góp ý cho chúng tôi')</script>";
 		echo "<script language='javascript'>window.location='index.php'</script>";
 		
 		}
@@ -145,9 +145,11 @@ if(isset($_POST['btnGopY'])){
                             </div>
                             
                          <div class="form-group">     
-                            <label for="lblNgayGopY" class="col-sm-2 control-label" value="<?php echo $now; ?> "> Ngày gửi góp ý(*):  </label>
+                            <label for="lblNgayGopY" class="col-sm-2 control-label" > Ngày gửi góp ý(*):  </label>
                             <div class="col-sm-10">	      
-                            <input name="txtNgayGiaoHang" id="txtNgayGiaoHang" type='date' class="form-control" />   
+                            <input name="txtNgayGopY" id="txtNgayGopY" type='text' class="form-control" value="<?php
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+echo date('y-m-d');?> " />   
                             </div>
    						</div>
                            
