@@ -304,7 +304,7 @@ include_once("dbconnect.php");
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
                         <h2>S<span>alomon</span></h2>
-                        <p>Siêu thị điện máy Salomon là một trong những siêu thị điện máy phát triển nhanh và ổn định bất chấp tình hình kinh tế thuận lợi hay khó khăn. Chuỗi siêu thị Salomon được thành lập từ 2004 chuyên bán lẻ các sản phẩm kỹ thuật số di động bao gồm điện thoại di động, máy tính bảng, laptop và phụ kiện với hơn 1000 siêu thị tại 63 tỉnh thành trên khắp Việt Nam.</p>
+                        <p>Siêu thị điện máy Tomy Store là một trong những siêu thị điện máy phát triển mạnh nhất tại Việt Nam. Chuỗi siêu thị Tommy Store được thành lập từ 2014 chuyên bán lẻ các sản phẩm kỹ thuật số di động bao gồm điện thoại di động, máy tính bảng, laptop và phụ kiện với hơn 64 chuỗi siêu thị tại 63 tỉnh thành trên khắp Việt Nam.</p>
                         <div class="footer-social">
                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
