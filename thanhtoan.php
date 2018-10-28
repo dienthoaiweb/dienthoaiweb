@@ -1,6 +1,5 @@
 <?php
 include_once('dbconnect.php');
-
   function bindHTTTList($conn)
 			  {
 				  $query="SELECT httt_ma, httt_ten from hinhthucthanhtoan";
@@ -14,8 +13,9 @@ include_once('dbconnect.php');
 				  echo "</select>";
 			  }
 			  
-if(isset($_POST['btnCapNhat']))
-{
+
+	if(isset($_POST['btnCapNhat']))
+{ 
 	if($_POST['txtNoiGiaoHang']!=""&& $_POST['txtNgayGiaoHang']!=""&&$_POST['slHinhThucThanhToan']!="0")
 	{
 		$noigiao=$_POST['txtNoiGiaoHang'];
@@ -27,7 +27,7 @@ if(isset($_POST['btnCapNhat']))
 		$dh_ma=mysqli_insert_id($conn);
 		foreach($_SESSION["giohang"] as $key => $row)
 	   {
-		   $query = "INSERT INTO sanpham_dondathang (sp_ma, dh_ma, sp_dh_soluong, sp_dh_dongia) VALUE (".$key.",".$dh_ma.",".$row['soluong'].",".$row['gia'].")";
+		   $query = "INSERT INTO chitietdonhang (sp_ma, dh_ma, ctdh_soluong) VALUE (".$key.",".$dh_ma.",".$row['soluong'].")";
 	   mysqli_query($conn,$query) or die(mysqli_error($conn));
 	   $queryupdatesoluong ="UPDATE sanpham SET sp_soluong=sp_soluong-".$row['soluong']."WHERE sp_ma=".$key;
 	   mysqli_query($conn,$queryupdatesoluong);
