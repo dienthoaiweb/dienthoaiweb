@@ -189,8 +189,8 @@ include_once("dbconnect.php");
                                       <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
                                       <li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
                                       <li><a href="?khoatrang=quanlydathang">Đơn hàng</a></li>
-                                      <li><a href="?khoatrang=quanlykhachhang">Khách hàng</a></li>
-                                      <li><a href="?khoatrang=quanlygopy">Góp ý</a></li>
+                                      <li><a href="?khoatrang=quanly_khachhang">Khách hàng</a></li>
+                                      <li><a href="?khoatrang=quanly_gopy">Góp ý</a></li>
                                     </ul>
                                 </li> 
 								<li><a href="?khoatrang=giohang">Giỏ hàng</a></li>
@@ -242,6 +242,9 @@ include_once("dbconnect.php");
 		}
 		elseif($khoatrang=="quanly_khachhang"){
 			include_once("quanly_khachhang.php");
+		}
+		elseif($khoatrang=="quanly_gopy"){
+			include_once("quanly_gopy.php");
 		}
 		elseif($khoatrang=="quanlysanpham_themmoi"){
 			include_once("quanly_sanpham_themmoi.php");
