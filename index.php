@@ -303,7 +303,7 @@ include_once("dbconnect.php");
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        <h2>S<span>alomon</span></h2>
+                        <h2>T<span>ommy Store</span></h2>
                         <p>Siêu thị điện máy Tomy Store là một trong những siêu thị điện máy phát triển mạnh nhất tại Việt Nam. Chuỗi siêu thị Tommy Store được thành lập từ 2014 chuyên bán lẻ các sản phẩm kỹ thuật số di động bao gồm điện thoại di động, máy tính bảng, laptop và phụ kiện với hơn 64 chuỗi siêu thị tại 63 tỉnh thành trên khắp Việt Nam.</p>
                         <div class="footer-social">
                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
