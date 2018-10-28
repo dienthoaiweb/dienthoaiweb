@@ -189,8 +189,8 @@ include_once("dbconnect.php");
                                       <li><a href="?khoatrang=quanlyloaisanpham">Loại sản phẩm</a></li>
                                       <li><a href="?khoatrang=quanlysanpham">Sản phẩm</a></li>
                                       <li><a href="?khoatrang=quanlydathang">Đơn hàng</a></li>
-                                      <li><a href="#">Khách hàng</a></li>
-                                      <li><a href="#">Góp ý</a></li>
+                                      <li><a href="?khoatrang=quanlykhachhang">Khách hàng</a></li>
+                                      <li><a href="?khoatrang=quanlygopy">Góp ý</a></li>
                                     </ul>
                                 </li> 
 								<li><a href="?khoatrang=giohang">Giỏ hàng</a></li>
