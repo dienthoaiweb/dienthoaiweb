@@ -1,7 +1,4 @@
-<?php
-	if(isset($_SESSION["quantri"]) && $_SESSION["quantri"]==1)
-	{
-?> 
+
 
     <!-- Bootstrap --> 
     <link rel="stylesheet" type="text/css" href="style.css"/>
@@ -125,12 +122,5 @@
             </div>
         </div><!--Nút chức nang-->
  </form>
- <?php
-	}
-	else
-	{
-		echo "<script>alert('Ban khong phai la quan tri vien')</script>";
-		echo "<script language='javascript'>window.location='index.php'</script>";
-	}
- ?>
+
    

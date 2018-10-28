@@ -1,7 +1,3 @@
-<?php
-	if(isset($_SESSION["quantri"]) && $_SESSION["quantri"]==1)
-	{
-?> 
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -49,16 +45,16 @@
 			//Kiểm tra xem có truyền mã để xóa không
 			if(isset($_GET["ma"])){
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$nhasanxuat = $_GET["ma"];
-				mysqli_query($conn, "DELETE FROM nhasanxuat WHERE nsx_ma=$nhasanxuat");
+				$nsx = $_GET["ma"];
+				mysqli_query($conn, "DELETE FROM nhasanxuat WHERE nsx_ma=$nsx");
 				echo '<meta http-equiv="refresh" content="0;URL=quanly_nhasanxuat.php"/>';
 			}
 			
 			if(isset($_POST["btXoa"])&& isset($_POST["checkbox"]))
 			{
 				for ($i = 0; $i < count($_POST['checkbox']); $i++)
-				{$masanpham = $_POST["checkbox"][$i];
-				mysqli_query($conn, "DELETE FROM nhasanxuat WHERE sp_ma=$manhasanxuat");
+				{$nsx = $_POST["checkbox"][$i];
+				mysqli_query($conn, "DELETE FROM nhasanxuat WHERE nsx_ma=$nsx");
 			}
 			}
 
@@ -66,15 +62,14 @@
         <form name="frmXoa" method="post" action="">
         <h1>Quản lý nhà sản xuất</h1>
         <p>
-        	<a href="quanly_sanpham_themmoi.php"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" /> Thêm mới</a>
+        	<a href="quanly_nhasanxuat_themmoi.php"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" /> Thêm mới</a>
         </p>
         <table id="tablesalomon" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th><strong>Chon</strong></th>
+                    <th><strong>Chọn</strong></th>
                     <th><strong>Mã Nhà sản xuất</strong></th>
                     <th><strong>Tên Nhà sản xuất</strong></th>
-                    <th><strong>Hình ảnh</strong></th>
                     <th><strong>Cập nhật</strong></th>
                     <th><strong>Xóa</strong></th>
                 </tr>
@@ -90,9 +85,7 @@
               <td class="cotCheckBox"><input name="checkbox[]" type="checkbox" id="checkbox[]" value="<?php echo $row["nsx_ma"]; ?>" /></td>
               <td ><?php echo $row["nsx_ma"] ?></td>
               <td><?php echo $row["nsx_ten"] ?></td>
-             <td align='center' class='cotNutChucNang'> <a href="quanly_nhasanxuat_themoi.php?ma=<?php echo $row['nsx_ma'] ?>"><img src='images/image_edit.png' border='0'  /></a>
-            
-             </td>
+             
              
               <td align='center' class='cotNutChucNang'>
               <a href="quanly_nhasanxuat_capnhat.php?ma=<?php echo $row['nsx_ma'] ?>">
@@ -119,11 +112,4 @@
         </div><!--Nút chức nang-->
  </form>
  
- <?php
-	}
-	else
-	{
-		echo "<script>alert('Ban khong phai la quan tri vien')</script>";
-		echo "<script language='javascript'>window.location='index.php'</script>";
-	}
- ?>
+ 
