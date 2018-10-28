@@ -47,10 +47,10 @@
         <?php
 		include_once 'dbconnect.php';
 			//Kiểm tra xem có truyền mã  cần xóa
-			if(isset($_GET["ma"]))
+			if(isset($_GET["ma1"]))
 			{
 			//Nếu xóa thì lấy mã và tiến hành xóa
-				$khdangnhap = $_GET["ma"];
+				$khdangnhap = $_GET["ma1"];
 				mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khdangnhap");
 			}
 			
@@ -61,8 +61,8 @@
 		{
 			for ($i = 0; $i < count($_POST['checkbox']); $i++) 
 			{
-						$khdanganhap = $_POST['checkbox'][$i];
-						mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khdangnhap");
+						$khma = $_POST['checkbox'][$i];
+						mysqli_query($conn, "DELETE FROM khachhang WHERE kh_tendangnhap=$khma");
 			}
 		}
 		?>
